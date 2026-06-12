@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import Image from 'next/image';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -63,11 +64,13 @@ export default function SocialProof() {
             <div className="marquee-track flex gap-6 absolute left-0 w-max pr-6">
                 {/* Dobramos a array para criar o efeito infinito contínuo */}
                 {[...proofs, ...proofs].map((src, i) => (
-                    <div key={i} className="w-[280px] h-[220px] rounded-2xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(34,197,94,0.1)] shrink-0 grayscale hover:grayscale-0 transition duration-500">
-                        <img 
-                            src={src} 
+                    <div key={i} className="relative w-[280px] h-[220px] rounded-2xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(34,197,94,0.1)] shrink-0 grayscale hover:grayscale-0 transition duration-500">
+                        <Image 
+                            src={encodeURI(src)} 
                             alt={`Comprovante ${i}`} 
-                            className="w-full h-full object-cover" 
+                            fill
+                            referrerPolicy="no-referrer"
+                            className="object-cover" 
                             onError={(e) => {
                                 // Fallback mock image Se as fotos nao forem enviadas pra public
                                 e.currentTarget.src = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2670&auto=format&fit=crop";
