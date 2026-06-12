@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { Gamepad2, Brain, MessageCircle, Users, Calculator, Wand2 } from 'lucide-react';
+import Image from 'next/image';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -32,6 +33,7 @@ export default function TheApp() {
     tl.from('.app-badge', { scale: 0.8, opacity: 0, duration: 1.2, ease: 'expo.out' })
       .from('.app-title', { y: 30, opacity: 0, duration: 1.2, ease: 'power3.out' }, '-=0.8')
       .from('.app-desc', { y: 30, opacity: 0, duration: 1.2, ease: 'power3.out' }, '-=1')
+      .from('.app-frame', { y: 40, opacity: 0, duration: 1.2, stagger: 0.2, ease: 'power3.out' }, '-=0.8')
       .from('.app-feat', { y: 40, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out' }, '-=0.8');
 
   }, { scope: container });
@@ -50,6 +52,22 @@ export default function TheApp() {
                 <p className="app-desc text-gray-400 text-lg md:text-xl leading-relaxed">
                     Não é apenas um PDF. Você recebe acesso vitalício a um <strong className="text-white">Assistente de Vendas Pro</strong> com Inteligência Artificial integrada para quebrar de vez a barreira do inglês.
                 </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                {[1, 2, 3].map((num) => (
+                    <div key={num} className="app-frame relative w-full aspect-square max-w-[400px] mx-auto rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_30px_rgba(124,58,237,0.15)] group">
+                        <Image 
+                            src={`/appimg${num}.png`} 
+                            alt={`App frame ${num}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            onError={(e) => {
+                                e.currentTarget.src = `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&h=400&auto=format&fit=crop`;
+                            }}
+                        />
+                    </div>
+                ))}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

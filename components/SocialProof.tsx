@@ -12,16 +12,18 @@ if (typeof window !== 'undefined') {
 export default function SocialProof() {
   const container = useRef<HTMLDivElement>(null);
   
-  // Nomes de placeholder, caso a imagem falhe o fallback entra em cena
-  const proofs = [
-    '/print valor recebido 01.jpg',
-    '/print valor recebido 02.jpg',
-    '/print valor recebido 03.jpg',
-    '/print valor recebido 04.jpg',
-    '/print valor recebido 06.jpg',
-    '/print valor recebido 07.jpg',
-    '/print valor recebido 08.jpg'
-  ];
+    const proofs = [
+      { src: '/depo1.jpg', width: 304, height: 420 },
+      { src: '/depo2.jpg', width: 304, height: 351 },
+      { src: '/depo3.jpg', width: 303, height: 292 },
+      { src: '/depo4.jpg', width: 295, height: 371 },
+      { src: '/depo5.jpg', width: 301, height: 353 },
+      { src: '/depo7.jpg', width: 303, height: 368 },
+      { src: '/depo8.jpg', width: 302, height: 309 },
+      { src: '/depo9.jpg', width: 304, height: 309 },
+      { src: '/depo10.jpg', width: 295, height: 397 },
+      { src: '/depo11.jpg', width: 302, height: 374 },
+    ];
 
   useGSAP(() => {
     // GSAP Marquee for cinematic smooth scrolling without CSS jaggedness
@@ -56,17 +58,20 @@ export default function SocialProof() {
         </div>
 
         {/* Marquee Wrapper */}
-        <div className="relative w-[150vw] left-1/2 -translate-x-1/2 h-[150px] flex items-center overflow-hidden">
+        <div className="relative w-[150vw] md:w-[120vw] left-1/2 -translate-x-1/2 h-[300px] md:h-[400px] flex items-center overflow-hidden">
             {/* Fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#030303] to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#030303] to-transparent z-10" />
 
-            <div className="marquee-track flex gap-6 absolute left-0 w-max pr-6">
+            <div className="marquee-track flex gap-6 absolute left-0 w-max pr-6 items-center">
                 {/* Dobramos a array para criar o efeito infinito contínuo */}
-                {[...proofs, ...proofs].map((src, i) => (
-                    <div key={i} className="relative w-[419px] h-[106px] rounded-xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(34,197,94,0.1)] shrink-0 grayscale hover:grayscale-0 transition duration-500">
+                {[...proofs, ...proofs].map((proof, i) => (
+                    <div key={i} 
+                         className="relative h-[250px] md:h-[350px] rounded-xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(34,197,94,0.1)] shrink-0 grayscale hover:grayscale-0 transition duration-500"
+                         style={{ aspectRatio: `${proof.width} / ${proof.height}` }}
+                    >
                         <Image 
-                            src={encodeURI(src)} 
+                            src={encodeURI(proof.src)} 
                             alt={`Comprovante ${i}`} 
                             fill
                             referrerPolicy="no-referrer"
