@@ -56,7 +56,7 @@ export default function SocialProof() {
         </div>
 
         {/* Marquee Wrapper */}
-        <div className="relative w-[150vw] left-1/2 -translate-x-1/2 h-[300px] flex items-center overflow-hidden">
+        <div className="relative w-[150vw] left-1/2 -translate-x-1/2 h-[150px] flex items-center overflow-hidden">
             {/* Fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#030303] to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#030303] to-transparent z-10" />
@@ -64,7 +64,7 @@ export default function SocialProof() {
             <div className="marquee-track flex gap-6 absolute left-0 w-max pr-6">
                 {/* Dobramos a array para criar o efeito infinito contínuo */}
                 {[...proofs, ...proofs].map((src, i) => (
-                    <div key={i} className="relative w-[280px] h-[220px] rounded-2xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(34,197,94,0.1)] shrink-0 grayscale hover:grayscale-0 transition duration-500">
+                    <div key={i} className="relative w-[419px] h-[106px] rounded-xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(34,197,94,0.1)] shrink-0 grayscale hover:grayscale-0 transition duration-500">
                         <Image 
                             src={encodeURI(src)} 
                             alt={`Comprovante ${i}`} 

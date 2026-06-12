@@ -37,14 +37,14 @@ export default function TheApp() {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
+    <section ref={container} className="py-12 md:py-16 bg-[#050505] relative overflow-hidden">
         
         {/* Glows */}
         <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-600/10 blur-[150px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10 max-w-6xl">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-8">
                 <span className="app-badge inline-block border border-green-500/50 bg-green-500/10 text-green-400 font-black tracking-widest text-[10px] uppercase mb-4 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(34,197,94,0.2)]">O Seu Maior Diferencial</span>
                 <h2 className="app-title text-3xl md:text-5xl font-black mb-6 text-white leading-tight">O Assistente <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Web App</span></h2>
                 <p className="app-desc text-gray-400 text-lg md:text-xl leading-relaxed">
