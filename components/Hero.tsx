@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null);
@@ -70,7 +71,7 @@ export default function Hero() {
                 
                 <div className="hero-badge opacity-0 inline-flex items-center px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-bold uppercase tracking-widest mb-8 shadow-[0_0_15px_rgba(124,58,237,0.2)]">
                     <span className="w-2 h-2 rounded-full bg-purple-400 mr-3 animate-pulse"></span>
-                    O fim do "Postar e Rezar"
+                    O fim do &quot;Postar e Rezar&quot;
                 </div>
 
                 <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-white tracking-tight drop-shadow-2xl hero-title perspective-1000">
@@ -105,15 +106,16 @@ export default function Hero() {
                     {/* Glow behind image */}
                     <div className="absolute -inset-4 bg-gradient-to-br from-purple-600/30 to-indigo-600/30 rounded-2xl blur-3xl opacity-50 group-hover:opacity-80 transition duration-1000"></div>
                     
-                    <div className="relative rounded-xl overflow-hidden shadow-2xl border border-white/10 rotate-y-[-10deg] rotate-x-[5deg] transform-gpu hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-all duration-1000 ease-out">
+                    <div className="relative rounded-xl overflow-hidden shadow-2xl border border-white/10 rotate-y-[-10deg] rotate-x-[5deg] transform-gpu hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-all duration-1000 ease-out aspect-[3/4]">
                         {/* Como não temos a imagem real injetada ainda, prevemos a tag que o usuário vai usar */}
-                        <img 
+                        <Image 
                             src="/gravi.jpg" 
                             alt="Capa do Livro Arte Magnética" 
-                            className="w-full h-auto object-cover"
+                            fill
+                            className="object-cover"
                             onError={(e) => {
                                 // Fallback caso a imagem não esteja no root public do usuário
-                                e.currentTarget.src = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop";
+                                e.currentTarget.srcset = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop";
                             }}
                         />
                     </div>
