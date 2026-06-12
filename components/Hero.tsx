@@ -108,7 +108,7 @@ export default function Hero() {
                     <div className="relative rounded-xl overflow-hidden shadow-2xl border border-white/10 rotate-y-[-10deg] rotate-x-[5deg] transform-gpu hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-all duration-1000 ease-out">
                         {/* Como não temos a imagem real injetada ainda, prevemos a tag que o usuário vai usar */}
                         <img 
-                            src="/Gravi.jpg" 
+                            src="/gravi.jpg" 
                             alt="Capa do Livro Arte Magnética" 
                             className="w-full h-auto object-cover"
                             onError={(e) => {
