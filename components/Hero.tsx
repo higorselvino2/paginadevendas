@@ -34,8 +34,7 @@ export default function Hero() {
                 </h1>
 
                 <p className="text-gray-400 text-base md:text-lg lg:text-xl leading-relaxed mb-10 max-w-xl">
-                    <span className="text-white font-bold">Você não precisa de milhares de seguidores. Você precisa da técnica que vende rápido.</span>{' '}
-                    Muitos artistas tentam crescer no instagram de graça e fracassam. Entenda por que vender ativamente em fóruns gringos constrói riquezas de forma previsível e segura.
+                    <strong className="text-white">Se</strong> você está cansado de desenhar de graça para o Instagram e quer clientes que dão valor à sua arte, <strong className="text-white">então</strong> preste muita atenção. Você não precisa de mais seguidores. Você precisa de um processo de vendas.
                 </p>
 
                 <div className="w-full sm:w-auto">

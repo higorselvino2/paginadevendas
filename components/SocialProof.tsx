@@ -26,12 +26,12 @@ export default function SocialProof() {
             
             <div className="inline-flex items-center gap-3 bg-[#0a0a0a] border border-purple-500/20 px-6 py-3 rounded-full shadow-[0_0_20px_rgba(124,58,237,0.1)]">
                <Info className="w-5 h-5 text-purple-400" />
-               <span className="text-sm md:text-base text-gray-300">Detalhe: <strong>Nenhum deles tinha milhares de seguidores.</strong> Eles apenas aplicaram o Método.</span>
+               <span className="text-sm md:text-base text-gray-300">Detalhe: <strong>Nenhum deles tinha milhares de seguidores.</strong> Eles apenas aplicaram o Código.</span>
             </div>
         </div>
 
         {/* CSS Marquee Wrapper */}
-        <div className="relative w-[150vw] md:w-[120vw] left-1/2 -translate-x-1/2 h-[500px] flex items-center overflow-hidden">
+        <div className="relative w-[150vw] md:w-[120vw] left-1/2 -translate-x-1/2 h-[350px] flex items-center overflow-hidden">
             {/* Fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
@@ -40,14 +40,14 @@ export default function SocialProof() {
                 {/* Dobramos a array para criar o efeito infinito contínuo */}
                 {[...proofs, ...proofs].map((proof, i) => (
                     <div key={i} 
-                         className="relative h-[450px] w-[300px] md:w-[350px] rounded-3xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-[0_0_20px_rgba(255,255,255,0.05)] shrink-0 transition duration-500 hover:scale-[1.02]"
+                         className="relative h-[250px] w-[400px] md:w-[450px] rounded-2xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-[0_0_20px_rgba(255,255,255,0.05)] shrink-0 transition duration-500 hover:scale-[1.02]"
                     >
                         <Image 
                             src={encodeURI(proof.src)} 
                             alt={`Comprovante ${i}`} 
                             fill
                             referrerPolicy="no-referrer"
-                            className="object-cover" 
+                            className="object-contain p-2" 
                             onError={(e) => {
                                 // Fallback mock image Se as fotos nao forem enviadas pra public
                                 e.currentTarget.srcset = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2670&auto=format&fit=crop";
