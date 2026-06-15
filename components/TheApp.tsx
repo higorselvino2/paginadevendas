@@ -1,57 +1,40 @@
 'use client';
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import Image from 'next/image';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
+import { Gamepad2, Book, Users, MessageCircle, PenTool, DollarSign } from 'lucide-react';
 
 export default function TheApp() {
-  const container = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container.current,
-        start: 'top 75%',
-      }
-    });
-
-    tl.from('.app-badge', { scale: 0.8, opacity: 0, duration: 1.2, ease: 'expo.out' })
-      .from('.app-title', { y: 30, opacity: 0, duration: 1.2, ease: 'power3.out' }, '-=0.8')
-      .from('.app-desc', { y: 30, opacity: 0, duration: 1.2, ease: 'power3.out' }, '-=1')
-      .from('.app-frame', { y: 40, opacity: 0, duration: 1.2, stagger: 0.2, ease: 'power3.out' }, '-=0.8');
-
-  }, { scope: container });
+  const features = [
+    { icon: <Gamepad2 className="w-8 h-8 text-white" />, title: 'Plano Gamificado 14 Dias', desc: 'Um sistema claro e à prova de ansiedade. Um passo a passo exato do que você deve fazer dia a dia até fechar a sua primeira comissão gringa.' },
+    { icon: <Book className="w-8 h-8 text-white" />, title: 'Dossiê: 20 Nichos Milionários', desc: 'Saiba exatamente onde clientes que pagam mais de $100 dólares por um desenho estão escondidos e o que eles querem comprar.' },
+    { icon: <Users className="w-8 h-8 text-white" />, title: 'CRM Prático', desc: 'Seu painel profissional. Organize os pedidos, prazos e saiba exatamente quem já pagou e quem você precisa cobrar.' },
+    { icon: <MessageCircle className="w-8 h-8 text-white" />, title: 'Scripts à Prova de Falhas', desc: 'Copiou, colou, vendeu. Escolha a situação e use nossas frases validadas em inglês nativo para contornar qualquer objeção de preço.' },
+    { icon: <PenTool className="w-8 h-8 text-white" />, title: 'Gerador de Bio Magnética', desc: 'Estruture o seu perfil (Twitter, Reddit, Discord) como um verdadeiro profissional. Sem achismos, focado apenas no que o americano quer ler.' },
+    { icon: <DollarSign className="w-8 h-8 text-white" />, title: 'A Calculadora em Dólar', desc: 'Descubra matematicamente o valor exato que você deve cobrar pela sua arte. Sem medo de cobrar caro, sem a frustração de cobrar barato demais.' },
+  ];
 
   return (
-    <section ref={container} className="py-12 md:py-16 bg-[#050505] relative overflow-hidden">
-        
-        {/* Glows */}
+    <section className="py-24 bg-[#050505] relative overflow-hidden">
         <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-600/10 blur-[150px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10 max-w-6xl">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-                <span className="app-badge inline-block border border-green-500/50 bg-green-500/10 text-green-400 font-black tracking-widest text-[10px] uppercase mb-4 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(34,197,94,0.2)]">O Seu Maior Diferencial</span>
-                <h2 className="app-title text-3xl md:text-5xl font-black mb-6 text-white leading-tight">O Assistente <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Web App</span></h2>
+            <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
+                <span className="app-badge inline-block border border-green-500/50 bg-green-500/10 text-green-400 font-bold tracking-widest text-[10px] uppercase mb-6 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(34,197,94,0.2)]">
+                  Mecanismo Único
+                </span>
+                <h2 className="app-title text-3xl md:text-5xl font-black mb-6 text-white leading-tight">O Sistema <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Arte Magnética</span></h2>
                 <p className="app-desc text-gray-400 text-lg md:text-xl leading-relaxed">
-                    Não é apenas um PDF. Você recebe acesso vitalício a um <strong className="text-white">Assistente de Vendas Pro</strong> com Inteligência Artificial integrada para quebrar de vez a barreira do inglês.
+                    Você não vai receber um "cursinho" em vídeo que te dá sono. Você recebe o acesso ao <strong>nosso portal restrito</strong> com as ferramentas exatas para iniciar sua prospecção hoje mesmo. E as objeções com inglês? Já foram destruídas.
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[1, 2, 3].map((num) => (
-                    <div key={num} className="app-frame relative w-full aspect-square max-w-[400px] mx-auto rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_30px_rgba(124,58,237,0.15)] group bg-[#111]">
-                        <Image 
-                            src={`/appimg${num}.png`} 
-                            alt={`App frame ${num}`}
-                            fill
-                            className="object-cover transition-transform duration-700"
-                        />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {features.map((f, i) => (
+                    <div key={i} className="app-feat group bg-[#0a0a0a] border border-gray-900 p-8 rounded-3xl hover:border-purple-500/30 transition duration-500 flex flex-col items-start shadow-[0_0_30px_rgba(0,0,0,0.3)]">
+                        <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(124,58,237,0.4)]">
+                            {f.icon}
+                        </div>
+                        <h3 className="font-bold text-white text-xl mb-3">{f.title}</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
                     </div>
                 ))}
             </div>
