@@ -4,10 +4,10 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <header className="relative min-h-screen flex flex-col pt-12 pb-16 z-10 overflow-hidden bg-[#050505]">
+    <header className="relative min-h-screen flex flex-col pt-6 md:pt-10 pb-10 md:pb-16 z-10 overflow-hidden bg-[#050505]">
         
         {/* Top Centered Logo */}
-        <div className="w-full flex justify-center mb-16 md:mb-24 z-20">
+        <div className="w-full flex justify-center mb-10 md:mb-16 z-20">
            <div className="relative w-64 h-24">
              <Image 
                 src="/logo.png" 
@@ -29,6 +29,19 @@ export default function Hero() {
                     O fim do "Postar e Rezar"
                 </div>
 
+                <div className="flex items-center gap-4 mb-6">
+                    <div className="flex -space-x-4">
+                        <img className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Aluno 1" />
+                        <img className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Aluno 2" />
+                        <img className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Aluno 3" />
+                        <div className="w-10 h-10 rounded-full border-2 border-[#050505] bg-purple-900 flex items-center justify-center text-xs font-bold text-white">+1k</div>
+                    </div>
+                    <div className="text-base">
+                        <div className="flex text-yellow-400 text-lg">★★★★★</div>
+                        <span className="text-gray-400 font-medium">Mais de 1.000 artistas faturando</span>
+                    </div>
+                </div>
+
                 <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] mb-6 text-white tracking-tight drop-shadow-2xl">
                     Descubra Os Exatos 4 Passos Para Fechar de 3 a 5 Commissions por Semana <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">em DÓLAR</span>
                 </h1>
@@ -38,9 +51,12 @@ export default function Hero() {
                 </p>
 
                 <div className="w-full sm:w-auto">
-                    <a href="#oferta" className="group relative inline-flex items-center justify-center w-full sm:w-auto bg-gradient-to-r from-[#6b31ff] to-[#5123d4] hover:from-[#7a48ff] hover:to-[#6133eb] text-white font-black py-4 px-10 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(107,49,255,0.4)] transition-all duration-300">
-                        <span className="relative z-10 flex items-center text-sm md:text-base uppercase tracking-widest">
-                            Quero Cobrar em Dólar <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <a href="#oferta" className="group relative flex items-center justify-center w-full bg-gradient-to-r from-[#6b31ff] to-[#5123d4] hover:from-[#7a48ff] hover:to-[#6133eb] text-white font-black py-4 md:py-5 px-10 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(107,49,255,0.4)] transition-all duration-300 min-h-[54px] w-[90%] md:w-auto mx-auto sm:mx-0">
+                        <span className="relative z-10 flex flex-col items-center">
+                            <span className="text-base md:text-lg uppercase tracking-widest flex items-center">
+                                QUERO GANHAR EM DÓLAR AGORA <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                            <span className="text-[10px] md:text-xs font-normal opacity-80 mt-1">Acesso imediato • Garantia de 7 dias</span>
                         </span>
                     </a>
                 </div>

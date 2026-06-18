@@ -3,7 +3,7 @@ import { XCircle, CheckCircle2 } from 'lucide-react';
 
 export default function Comparison() {
   return (
-    <section className="py-24 md:py-32 bg-[#050505] border-t border-gray-900 overflow-hidden relative">
+    <section className="py-10 md:py-16 bg-[#050505] border-t border-gray-900 overflow-hidden relative">
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
             
             <div className="text-center max-w-3xl mx-auto mb-16">

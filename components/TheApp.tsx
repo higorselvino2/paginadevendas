@@ -12,7 +12,7 @@ export default function TheApp() {
   ];
 
   return (
-    <section className="py-24 bg-[#050505] relative overflow-hidden">
+    <section className="py-10 md:py-16 bg-[#050505] relative overflow-hidden">
         <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-600/10 blur-[150px] rounded-full pointer-events-none" />
 
@@ -34,7 +34,7 @@ export default function TheApp() {
                             {f.icon}
                         </div>
                         <h3 className="font-bold text-white text-xl mb-3">{f.title}</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+                        <p className="text-gray-400 text-base leading-relaxed">{f.desc}</p>
                     </div>
                 ))}
             </div>

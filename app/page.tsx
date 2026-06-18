@@ -16,11 +16,11 @@ export default function Home() {
       <PainPoints />
       <Comparison />
       <Mechanism />
-      <Creator />
-      <SocialProof />
       <TheApp />
+      <SocialProof />
       <Pricing />
       <FAQ />
+      <Creator />
       <Footer />
     </main>
   );

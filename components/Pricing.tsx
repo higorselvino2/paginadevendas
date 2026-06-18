@@ -3,7 +3,7 @@ import { CheckCircle, X, ShieldCheck, AlertCircle } from 'lucide-react';
 
 export default function Pricing() {
   return (
-    <section id="oferta" className="py-24 md:py-32 bg-[#050505] border-t border-gray-900 relative">
+    <section id="oferta" className="py-10 md:py-16 bg-[#050505] border-t border-gray-900 relative">
         
         {/* Glow Effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none" />
@@ -69,7 +69,7 @@ export default function Pricing() {
                         <div className="mb-8">
                             <span className="text-red-500/70 line-through text-lg font-medium">De R$ 297</span>
                             <div className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 text-6xl font-black">R$ 37,00</div>
-                            <span className="text-gray-400 text-sm mt-2 block">(Acesso vitalício imediato)</span>
+                            <span className="text-gray-400 text-base mt-2 block">(Acesso vitalício imediato)</span>
                         </div>
 
                         <ul className="space-y-4 mb-8 flex-grow text-gray-300 font-medium">
@@ -80,7 +80,7 @@ export default function Pricing() {
                                 <ShieldCheck className="w-8 h-8 text-purple-400 mr-4 shrink-0" /> 
                                 <div>
                                     <span className="font-black text-white text-lg block">App Exclusivo (Acesso Vitalício)</span>
-                                    <span className="text-sm text-purple-300">Sua IA pessoal para gerar scripts em inglês perfeito e organizar todo o seu fluxo de clientes americanos.</span>
+                                    <span className="text-base text-purple-300">Sua IA pessoal para gerar scripts em inglês perfeito e organizar todo o seu fluxo de clientes americanos.</span>
                                 </div>
                             </li>
 
@@ -99,7 +99,7 @@ export default function Pricing() {
             </div>
 
             {/* Garantia Section */}
-            <div className="max-w-4xl mx-auto mt-24 bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-[0_0_40px_rgba(34,197,94,0.05)]">
+            <div className="max-w-4xl mx-auto mt-16 bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-[0_0_40px_rgba(34,197,94,0.05)]">
                 <div className="shrink-0 transform hover:scale-105 transition-transform duration-500">
                     <div className="relative w-32 h-32 md:w-40 md:h-40 drop-shadow-[0_0_30px_rgba(234,179,8,0.3)]">
                         <img 
@@ -122,6 +122,15 @@ export default function Pricing() {
                      Se por qualquer motivo você não gostar e achar que não serve para você, eu devolvo 100% do seu dinheiro. Sem perguntas, sem burocracia. O risco é todo meu.
                    </p>
                 </div>
+            </div>
+
+            <div className="w-full flex justify-center mt-10">
+                <a href="https://pay.kiwify.com.br/JOrEjmT" className="group relative flex items-center justify-center w-full max-w-sm sm:w-auto bg-gradient-to-r from-[#6b31ff] to-[#5123d4] hover:from-[#7a48ff] hover:to-[#6133eb] text-white font-black py-4 md:py-5 px-10 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(107,49,255,0.4)] transition-all duration-300 min-h-[54px]">
+                   <span className="relative z-10 flex flex-col items-center">
+                     <span className="text-base md:text-lg uppercase tracking-widest flex items-center">GARANTIR MEU ACESSO AGORA</span>
+                     <span className="text-[10px] md:text-xs font-normal opacity-80 mt-1">Acesso imediato • Garantia de 7 dias</span>
+                   </span>
+                </a>
             </div>
 
         </div>

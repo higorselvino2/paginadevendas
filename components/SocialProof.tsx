@@ -1,24 +1,24 @@
 'use client';
 import Image from 'next/image';
-import { Info } from 'lucide-react';
+import { Info, ArrowRight } from 'lucide-react';
 
 export default function SocialProof() {
     const proofs = [
-      { src: '/depo1.jpg', width: 400, height: 600 },
-      { src: '/depo2.jpg', width: 400, height: 600 },
-      { src: '/depo3.jpg', width: 400, height: 600 },
-      { src: '/depo4.jpg', width: 400, height: 600 },
-      { src: '/depo5.jpg', width: 400, height: 600 },
-      { src: '/depo7.jpg', width: 400, height: 600 },
-      { src: '/depo8.jpg', width: 400, height: 600 },
-      { src: '/depo9.jpg', width: 400, height: 600 },
-      { src: '/depo10.jpg', width: 400, height: 600 },
-      { src: '/depo11.jpg', width: 400, height: 600 },
+      { src: '/depo1.jpg', width: 304, height: 420 },
+      { src: '/depo2.jpg', width: 304, height: 351 },
+      { src: '/depo3.jpg', width: 303, height: 292 },
+      { src: '/depo4.jpg', width: 295, height: 371 },
+      { src: '/depo5.jpg', width: 301, height: 346 },
+      { src: '/depo7.jpg', width: 303, height: 368 },
+      { src: '/depo8.jpg', width: 302, height: 309 },
+      { src: '/depo9.jpg', width: 304, height: 309 },
+      { src: '/depo10.jpg', width: 300, height: 397 },
+      { src: '/depo11.jpg', width: 302, height: 374 },
     ];
 
   return (
-    <section className="py-24 overflow-hidden bg-[#050505]">
-        <div className="container mx-auto px-4 text-center mb-16 max-w-4xl">
+    <section className="py-10 md:py-16 overflow-hidden bg-[#050505]">
+        <div className="container mx-auto px-4 text-center mb-10 max-w-4xl">
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
                A Prova de que Talento Sem Estratégia é Perda de Tempo
             </h2>
@@ -30,41 +30,33 @@ export default function SocialProof() {
             </div>
         </div>
 
-        {/* CSS Marquee Wrapper */}
-        <div className="relative w-[150vw] md:w-[120vw] left-1/2 -translate-x-1/2 h-[350px] flex items-center overflow-hidden">
-            {/* Fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
-
-            <div className="flex gap-6 absolute left-0 w-max pr-6 items-center animate-[marquee_40s_linear_infinite]">
-                {/* Dobramos a array para criar o efeito infinito contínuo */}
-                {[...proofs, ...proofs].map((proof, i) => (
-                    <div key={i} 
-                         className="relative h-[250px] w-[400px] md:w-[450px] rounded-2xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-[0_0_20px_rgba(255,255,255,0.05)] shrink-0 transition duration-500 hover:scale-[1.02]"
-                    >
-                        <Image 
+        <div className="container mx-auto px-4 max-w-6xl">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+                {proofs.map((proof, i) => (
+                    <div key={i} className="break-inside-avoid relative rounded-xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-[0_0_20px_rgba(255,255,255,0.05)] transition duration-300 hover:border-purple-500/30">
+                        <img 
                             src={encodeURI(proof.src)} 
-                            alt={`Comprovante ${i}`} 
-                            fill
-                            referrerPolicy="no-referrer"
-                            className="object-contain p-2" 
+                            alt={`Comprovante ${i}`}
+                            width={proof.width}
+                            height={proof.height}
+                            className="w-full h-auto object-contain"
                             onError={(e) => {
-                                // Fallback mock image Se as fotos nao forem enviadas pra public
-                                e.currentTarget.srcset = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2670&auto=format&fit=crop";
+                                e.currentTarget.src = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2670&auto=format&fit=crop";
                             }}
                         />
                     </div>
                 ))}
             </div>
         </div>
-        
-        {/* Simple inline style for marquee if Tailwind config is strict */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-          }
-        `}} />
+
+        <div className="w-full flex justify-center mt-10 px-4">
+            <a href="#oferta" className="group relative flex items-center justify-center w-full max-w-sm sm:w-auto bg-gradient-to-r from-[#6b31ff] to-[#5123d4] hover:from-[#7a48ff] hover:to-[#6133eb] text-white font-black py-4 md:py-5 px-10 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(107,49,255,0.4)] transition-all duration-300 min-h-[54px]">
+               <span className="relative z-10 flex flex-col items-center">
+                 <span className="text-base md:text-lg uppercase tracking-widest flex items-center">QUERO ESSES RESULTADOS</span>
+                 <span className="text-[10px] md:text-xs font-normal opacity-80 mt-1">Acesso Imediato</span>
+               </span>
+            </a>
+        </div>
     </section>
   );
 }

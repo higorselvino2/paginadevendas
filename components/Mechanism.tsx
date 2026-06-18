@@ -21,7 +21,7 @@ export default function Mechanism() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-[#080808] relative">
+    <section className="py-10 md:py-16 bg-[#080808] relative">
         <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight">O Que Você Vai <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Aprender Exatamente</span></h2>
@@ -30,7 +30,7 @@ export default function Mechanism() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
                 {cards.map((card, i) => (
                     <div key={i} className="bg-[#111] p-8 md:p-10 rounded-3xl border border-gray-800 hover:border-purple-500/30 transition-colors duration-200">
                         <div className="mb-6">
@@ -40,6 +40,15 @@ export default function Mechanism() {
                         <p className="text-gray-400 text-base leading-relaxed">{card.desc}</p>
                     </div>
                 ))}
+            </div>
+
+            <div className="w-full flex justify-center pb-4">
+               <a href="#oferta" className="group relative flex items-center justify-center w-full max-w-sm sm:w-auto bg-gradient-to-r from-[#6b31ff] to-[#5123d4] hover:from-[#7a48ff] hover:to-[#6133eb] text-white font-black py-4 px-10 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(107,49,255,0.4)] transition-all duration-300 min-h-[54px]">
+                  <span className="relative z-10 flex flex-col items-center">
+                    <span className="text-base md:text-lg uppercase tracking-widest flex items-center">QUERO ESSA SOLUÇÃO</span>
+                    <span className="text-[10px] md:text-xs font-normal opacity-80 mt-1">Acesso Imediato</span>
+                  </span>
+               </a>
             </div>
         </div>
     </section>
