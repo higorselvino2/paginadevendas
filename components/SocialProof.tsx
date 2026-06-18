@@ -30,16 +30,22 @@ export default function SocialProof() {
             </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-6xl">
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-                {proofs.map((proof, i) => (
-                    <div key={i} className="break-inside-avoid relative rounded-xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-[0_0_20px_rgba(255,255,255,0.05)] transition duration-300 hover:border-purple-500/30">
+        {/* CSS Marquee Wrapper */}
+        <div className="relative w-full max-w-[100vw] overflow-hidden flex flex-col gap-6 py-4">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
+
+            {/* Marquee Row */}
+            <div className="flex gap-4 w-max animate-[marquee_50s_linear_infinite] hover:[animation-play-state:paused]">
+                {/* Dobramos a array para criar o efeito infinito contínuo */}
+                {[...proofs, ...proofs].map((proof, i) => (
+                    <div key={i} className="relative rounded-xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-lg transition duration-300 hover:border-purple-500/30 shrink-0" style={{ height: '350px' }}>
                         <img 
                             src={encodeURI(proof.src)} 
                             alt={`Comprovante ${i}`}
-                            width={proof.width}
-                            height={proof.height}
-                            className="w-full h-auto object-contain"
+                            style={{ height: '100%', width: `${(proof.width / proof.height) * 350}px` }}
+                            className="object-contain"
                             onError={(e) => {
                                 e.currentTarget.src = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2670&auto=format&fit=crop";
                             }}
@@ -48,6 +54,13 @@ export default function SocialProof() {
                 ))}
             </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+          }
+        `}} />
 
         <div className="w-full flex justify-center mt-10 px-4">
             <a href="#oferta" className="group relative flex items-center justify-center w-full max-w-sm sm:w-auto bg-gradient-to-r from-[#6b31ff] to-[#5123d4] hover:from-[#7a48ff] hover:to-[#6133eb] text-white font-black py-4 md:py-5 px-10 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(107,49,255,0.4)] transition-all duration-300 min-h-[54px]">
