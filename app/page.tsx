@@ -17,10 +17,10 @@ export default function Home() {
       <Comparison />
       <Mechanism />
       <TheApp />
+      <Creator />
       <SocialProof />
       <Pricing />
       <FAQ />
-      <Creator />
       <Footer />
     </main>
   );
