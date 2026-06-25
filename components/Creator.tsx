@@ -19,7 +19,7 @@ export default function Creator() {
           <div className="max-w-xl text-left">
              <p className="text-green-500 font-bold text-xs md:text-sm tracking-widest uppercase mb-4">Quem vai te ensinar</p>
              <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Higor Selvino</h2>
-             <p className="text-green-400 font-bold mb-6">Especialista em mercado gringo para ilustradores e criador do Arte Magnética.</p>
+             <p className="text-green-400 font-bold mb-6">Ilustrador que vende no mercado internacional e criador do Arte Magnética.</p>
              
              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
                Ele ajuda artistas a estruturarem processos de venda que realmente convertem em dólar, unindo estratégia, prospecção ativa e o campo de batalha das comunidades internacionais.

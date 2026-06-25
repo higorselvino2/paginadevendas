@@ -19,6 +19,17 @@ export default function TheApp() {
                 Você assiste, abre o Discord/Reddit e <strong className="text-green-400">já aplica.</strong>
             </p>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 text-left max-w-2xl mx-auto">
+                <div className="bg-[#111] border border-gray-800 p-6 rounded-2xl">
+                    <h4 className="text-green-500 font-black text-lg mb-2 uppercase tracking-wide">Orientador de Nicho</h4>
+                    <p className="text-gray-400 text-sm md:text-base leading-relaxed">Saiba exatamente para onde atirar. Sem ficar perdido, vá direto nos mercados que já estão comprando ilustrações hoje.</p>
+                </div>
+                <div className="bg-[#111] border border-gray-800 p-6 rounded-2xl">
+                    <h4 className="text-green-500 font-black text-lg mb-2 uppercase tracking-wide">Ferramenta de Precificação</h4>
+                    <p className="text-gray-400 text-sm md:text-base leading-relaxed">Calcule o valor exato da sua arte em dólar. Sem medo de cobrar caro e sem o risco de cobrar barato demais.</p>
+                </div>
+            </div>
+
             <div className="w-full flex justify-center">
                <a href="#oferta" className="group relative flex items-center justify-center w-full max-w-sm sm:w-auto bg-green-500 hover:bg-green-600 text-black font-black py-4 px-10 rounded-full transition-all duration-300 min-h-[54px]">
                   <span className="relative z-10 flex flex-col items-center">

@@ -63,8 +63,8 @@ export default function Hero() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
                     
                     <div className="absolute bottom-6 left-6 flex flex-col">
-                        <span className="text-white font-bold text-xl drop-shadow-md">Higor Selvino</span>
-                        <span className="text-gray-300 text-sm drop-shadow-md">- Especialista em mercado gringo</span>
+                        <span className="text-white font-bold text-xl drop-shadow-md">O Método Arte Magnética</span>
+                        <span className="text-gray-300 text-sm drop-shadow-md">O guia definitivo para faturar em dólar</span>
                     </div>
                 </div>
             </div>

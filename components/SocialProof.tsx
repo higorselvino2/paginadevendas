@@ -24,17 +24,17 @@ export default function SocialProof() {
             <p className="text-gray-400 mt-2 text-lg md:text-xl font-medium mb-6">Resultados reais de artistas que aplicaram o método.</p>
         </div>
 
-        {/* CSS Marquee Wrapper */}
+        {/* CSS Marquee Wrapper Desktop / Scroll Mobile */}
         <div className="relative w-full max-w-[100vw] overflow-hidden flex flex-col gap-6 py-4">
             {/* Fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
 
             {/* Marquee Row */}
-            <div className="flex gap-4 w-max animate-[marquee_50s_linear_infinite] hover:[animation-play-state:paused]">
+            <div className="flex gap-4 w-full overflow-x-auto snap-x snap-mandatory px-4 md:px-0 md:w-max md:overflow-visible md:animate-[marquee_50s_linear_infinite] md:hover:[animation-play-state:paused] hide-scrollbar">
                 {/* Dobramos a array para criar o efeito infinito contínuo */}
                 {[...proofs, ...proofs].map((proof, i) => (
-                    <div key={i} className="relative rounded-xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-lg transition duration-300 hover:border-purple-500/30 shrink-0" style={{ height: '350px' }}>
+                    <div key={i} className="snap-center relative rounded-xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-lg transition duration-300 hover:border-purple-500/30 shrink-0" style={{ height: '350px' }}>
                         <img 
                             src={encodeURI(proof.src)} 
                             alt={`Comprovante ${i}`}
@@ -53,6 +53,13 @@ export default function SocialProof() {
           @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
+          }
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
           }
         `}} />
 

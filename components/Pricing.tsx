@@ -26,16 +26,16 @@ export default function Pricing() {
                 <div className="mb-8">
                     <span className="text-gray-500 line-through text-lg block mb-1">De R$ 297,00</span>
                     <div className="text-5xl md:text-6xl font-black text-white tracking-tighter">
-                        <span className="text-3xl">12x</span> R$ 3,71
+                        <span className="text-3xl">6x</span> R$ 6,94
                     </div>
-                    <span className="text-green-400 font-bold text-lg mt-2 block">ou R$ 37 à vista</span>
+                    <span className="text-green-400 font-bold text-lg mt-2 block">ou R$ 37,00 à vista</span>
                 </div>
 
-                <ul className="space-y-4 mb-8 text-left max-w-sm mx-auto">
+                <ul className="space-y-4 mb-8 text-left max-w-md mx-auto">
                     <li className="flex items-center text-gray-300"><Check className="w-5 h-5 text-green-500 mr-3 shrink-0" /> Método 4 Passos Completo</li>
                     <li className="flex items-center text-gray-300"><Check className="w-5 h-5 text-green-500 mr-3 shrink-0" /> Scripts Prontos em Inglês</li>
-                    <li className="flex items-center text-gray-300"><Check className="w-5 h-5 text-green-500 mr-3 shrink-0" /> Lista de Fóruns Gringos</li>
-                    <li className="flex items-center text-gray-300"><Check className="w-5 h-5 text-green-500 mr-3 shrink-0" /> Planilha de Precificação</li>
+                    <li className="flex items-center text-gray-300"><Check className="w-5 h-5 text-green-500 mr-3 shrink-0" /> Ferramenta de Precificação</li>
+                    <li className="flex items-center text-gray-300"><Check className="w-5 h-5 text-green-500 mr-3 shrink-0" /> Orientador de Nicho Direto ao Ponto</li>
                 </ul>
 
                 <a href="https://pay.kiwify.com.br/JOrEjmT" className="group relative flex items-center justify-center w-full bg-green-500 hover:bg-green-600 text-black font-black py-4 md:py-5 px-8 rounded-full transition-all duration-300 min-h-[54px] text-lg uppercase tracking-wider mb-4">
