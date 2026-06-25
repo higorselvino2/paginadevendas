@@ -1,6 +1,5 @@
 'use client';
-import Image from 'next/image';
-import { Info, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function SocialProof() {
     const proofs = [
@@ -17,17 +16,12 @@ export default function SocialProof() {
     ];
 
   return (
-    <section className="py-10 md:py-16 overflow-hidden bg-[#050505]">
+    <section className="py-16 md:py-24 overflow-hidden bg-[#050505]">
         <div className="container mx-auto px-4 text-center mb-10 max-w-4xl">
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
-               A Prova de que Talento Sem Estratégia é Perda de Tempo
+            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
+               Quem aplicou, <span className="text-green-500">faturou em dólar</span>
             </h2>
-            <p className="text-purple-400 mt-2 text-lg font-medium mb-6">Esses artistas abaixo também estavam estagnados. Eles não ganharam na loteria do algoritmo do Instagram.</p>
-            
-            <div className="inline-flex items-center gap-3 bg-[#0a0a0a] border border-purple-500/20 px-6 py-3 rounded-full shadow-[0_0_20px_rgba(124,58,237,0.1)]">
-               <Info className="w-5 h-5 text-purple-400" />
-               <span className="text-sm md:text-base text-gray-300">Detalhe: <strong>Nenhum deles tinha milhares de seguidores.</strong> Eles apenas aplicaram o Código.</span>
-            </div>
+            <p className="text-gray-400 mt-2 text-lg md:text-xl font-medium mb-6">Resultados reais de artistas que aplicaram o método.</p>
         </div>
 
         {/* CSS Marquee Wrapper */}
@@ -62,11 +56,10 @@ export default function SocialProof() {
           }
         `}} />
 
-        <div className="w-full flex justify-center mt-10 px-4">
-            <a href="#oferta" className="group relative flex items-center justify-center w-full max-w-sm sm:w-auto bg-gradient-to-r from-[#6b31ff] to-[#5123d4] hover:from-[#7a48ff] hover:to-[#6133eb] text-white font-black py-4 md:py-5 px-10 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(107,49,255,0.4)] transition-all duration-300 min-h-[54px]">
+        <div className="w-full flex justify-center mt-12 px-4">
+            <a href="#oferta" className="group relative flex items-center justify-center w-full sm:w-auto bg-green-500 hover:bg-green-600 text-black font-black py-4 md:py-5 px-10 rounded-full transition-all duration-300 min-h-[54px] max-w-sm sm:max-w-none">
                <span className="relative z-10 flex flex-col items-center">
-                 <span className="text-base md:text-lg uppercase tracking-widest flex items-center">QUERO ESSES RESULTADOS</span>
-                 <span className="text-[10px] md:text-xs font-normal opacity-80 mt-1">Acesso Imediato</span>
+                 <span className="text-base md:text-lg uppercase tracking-widest flex items-center">Quero esses resultados em dólar</span>
                </span>
             </a>
         </div>

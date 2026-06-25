@@ -1,47 +1,32 @@
 'use client';
 import Image from 'next/image';
-import { Globe, DollarSign, Users } from 'lucide-react';
 
 export default function Creator() {
   return (
-    <section className="py-10 md:py-16 bg-[#050505]">
+    <section className="py-16 md:py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 bg-[#111] border border-gray-800 rounded-3xl p-8 md:p-12">
           
-          <div className="relative w-72 h-72 rounded-3xl overflow-hidden shrink-0 shadow-[0_0_50px_rgba(255,255,255,0.05)] border-2 border-[#ffeedd]">
+          <div className="relative w-full max-w-[300px] aspect-[4/5] rounded-2xl overflow-hidden shrink-0">
              <Image 
                 src="/eu.jpg" 
                 alt="Criador do Arte Magnética"
                 fill
                 className="object-cover"
              />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
           </div>
 
-          <div className="max-w-xl">
-             <h2 className="text-3xl md:text-5xl font-black text-white mb-1">O Criador</h2>
-             <p className="text-purple-400 font-bold text-base tracking-widest uppercase mb-6">Por trás do Arte Magnética</p>
+          <div className="max-w-xl text-left">
+             <p className="text-green-500 font-bold text-xs md:text-sm tracking-widest uppercase mb-4">Quem vai te ensinar</p>
+             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Higor Selvino</h2>
+             <p className="text-green-400 font-bold mb-6">Especialista em mercado gringo para ilustradores e criador do Arte Magnética.</p>
              
-             <p className="text-gray-300 text-lg leading-relaxed mb-8">
-               Passei muito tempo travado no Brasil. Hoje, já realizei <strong className="text-white underline decoration-white underline-offset-4">mais de 200 ilustrações internacionais</strong> recebendo em <strong className="text-white">Dólar, Euro e Libra</strong> (com desenhos avaliados entre <strong className="text-green-400 font-bold">$100 a $300 dólares cada</strong>). Descobri o padrão do mercado internacional e decidi empacotar esse exato conhecimento para que você não precise passar anos no escuro.
+             <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+               Ele ajuda artistas a estruturarem processos de venda que realmente convertem em dólar, unindo estratégia, prospecção ativa e o campo de batalha das comunidades internacionais.
              </p>
-
-             <div className="border-t border-gray-800 pt-6">
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 bg-transparent border border-gray-800 rounded-lg px-4 py-2">
-                    <Globe className="w-5 h-5 text-purple-400" />
-                    <span className="text-gray-300 text-base font-medium">+200 Comissões</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-transparent border border-gray-800 rounded-lg px-4 py-2">
-                    <DollarSign className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300 text-base font-medium">Recebendo em Moeda Forte</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-transparent border border-gray-800 rounded-lg px-4 py-2">
-                    <Users className="w-5 h-5 text-purple-400" />
-                    <span className="text-gray-300 text-base font-medium">+300 Alunos</span>
-                  </div>
-                </div>
-             </div>
+             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+               Os 4 passos não são teoria de vídeo de YouTube. São o que ele usa no dia a dia para transformar arte em <strong className="text-green-400">faturamento previsível em moeda forte.</strong>
+             </p>
           </div>
           
         </div>

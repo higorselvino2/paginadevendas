@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <header className="relative min-h-screen flex flex-col pt-6 md:pt-10 pb-10 md:pb-16 z-10 overflow-hidden bg-[#050505]">
+    <header className="relative flex flex-col pt-10 md:pt-16 pb-12 z-10 overflow-hidden bg-[#050505]">
         
-        {/* Top Centered Logo */}
-        <div className="w-full flex justify-center mb-10 md:mb-16 z-20">
-           <div className="relative w-64 h-24">
+        {/* Top Centered Logo (if needed, or maybe we remove it if it clutters? The reference doesn't have a big logo at top, but let's keep it smaller) */}
+        <div className="w-full flex justify-center mb-12 z-20 hidden md:flex">
+           <div className="relative w-40 h-16">
              <Image 
                 src="/logo.png" 
                 alt="Código da Arte Magnética" 
@@ -22,49 +22,36 @@ export default function Hero() {
         <div className="container mx-auto px-4 max-w-6xl relative z-10 flex flex-col md:flex-row items-center gap-12 flex-grow">
             
             {/* Text Content */}
-            <div className="md:w-[55%] flex flex-col items-start text-left">
+            <div className="md:w-1/2 flex flex-col items-start text-left">
                 
-                <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-gray-300 text-xs font-bold uppercase tracking-widest mb-8 shadow-[0_0_15px_rgba(124,58,237,0.15)]">
-                    <span className="w-2 h-2 rounded-none transform rotate-45 border border-purple-400 mr-3"></span>
-                    O fim do "Postar e Rezar"
+                <div className="inline-flex items-center px-4 py-1.5 rounded bg-purple-500/20 text-purple-400 text-[10px] md:text-xs font-bold uppercase tracking-wider mb-6">
+                    PARA QUEM POSTA TODO DIA E NÃO FECHA NADA
                 </div>
 
-                <div className="flex items-center gap-4 mb-6">
-                    <div className="flex -space-x-4">
-                        <img className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Aluno 1" />
-                        <img className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Aluno 2" />
-                        <img className="w-10 h-10 rounded-full border-2 border-[#050505] object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Aluno 3" />
-                        <div className="w-10 h-10 rounded-full border-2 border-[#050505] bg-purple-900 flex items-center justify-center text-xs font-bold text-white">+1k</div>
-                    </div>
-                    <div className="text-base">
-                        <div className="flex text-yellow-400 text-lg">★★★★★</div>
-                        <span className="text-gray-400 font-medium">Mais de 1.000 artistas faturando</span>
-                    </div>
-                </div>
-
-                <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] mb-6 text-white tracking-tight drop-shadow-2xl">
-                    Descubra Os Exatos 4 Passos Para Fechar de 3 a 5 Commissions por Semana <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">em DÓLAR</span>
+                <h1 className="text-4xl md:text-6xl font-black leading-[1.1] mb-6 text-white tracking-tight">
+                    Você não tem problema de talento. <span className="text-purple-500 block mt-2">Você tem problema de vendas.</span>
                 </h1>
 
-                <p className="text-gray-400 text-base md:text-lg lg:text-xl leading-relaxed mb-10 max-w-xl">
-                    <strong className="text-white">Se</strong> você está cansado de desenhar de graça para o Instagram e quer clientes que dão valor à sua arte, <strong className="text-white">então</strong> preste muita atenção. Você não precisa de mais seguidores. Você precisa de um processo de vendas.
+                <p className="text-gray-300 text-base md:text-xl leading-relaxed mb-8 max-w-xl">
+                    O método de <strong className="text-white">4 passos</strong> para transformar artes que ninguém vê em commissions fechadas em dólar. <strong className="text-white">Mesmo que você nunca tenha vendido para gringos na vida.</strong>
                 </p>
 
-                <div className="w-full sm:w-auto">
-                    <a href="#oferta" className="group relative flex items-center justify-center w-full bg-gradient-to-r from-[#6b31ff] to-[#5123d4] hover:from-[#7a48ff] hover:to-[#6133eb] text-white font-black py-4 md:py-5 px-10 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(107,49,255,0.4)] transition-all duration-300 min-h-[54px] w-[90%] md:w-auto mx-auto sm:mx-0">
-                        <span className="relative z-10 flex flex-col items-center">
-                            <span className="text-base md:text-lg uppercase tracking-widest flex items-center">
-                                QUERO GANHAR EM DÓLAR AGORA <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <div className="w-full sm:w-auto flex flex-col items-start">
+                    <a href="#oferta" className="group relative flex items-center justify-center w-full sm:w-auto bg-green-500 hover:bg-green-600 text-black font-black py-4 md:py-5 px-10 rounded-full transition-all duration-300 min-h-[54px] w-[90%] md:w-auto mx-auto sm:mx-0">
+                        <span className="relative z-10 flex items-center justify-center text-base md:text-lg tracking-wide">
+                            <span className="w-5 h-5 mr-3 bg-black rounded-full flex items-center justify-center">
+                                <ArrowRight className="w-3 h-3 text-green-500" />
                             </span>
-                            <span className="text-[10px] md:text-xs font-normal opacity-80 mt-1">Acesso imediato • Garantia de 7 dias</span>
+                            Quero ganhar em dólar agora
                         </span>
                     </a>
+                    <span className="text-gray-500 text-xs mt-3 text-center sm:text-left w-full font-medium">Acesso imediato • Garantia de 7 dias</span>
                 </div>
             </div>
 
             {/* Image Block */}
-            <div className="md:w-[45%] flex justify-center w-full mt-8 md:mt-0 relative group">
-                <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(107,49,255,0.2)] pointer-events-none">
+            <div className="md:w-1/2 flex justify-end w-full mt-8 md:mt-0 relative group">
+                <div className="relative w-full max-w-md aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden pointer-events-none">
                     <Image 
                         src="/gravi.jpg" 
                         alt="Capa do Livro Arte Magnética" 
@@ -72,6 +59,13 @@ export default function Hero() {
                         className="object-cover"
                         priority
                     />
+                    {/* Shadow overlay at bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
+                    
+                    <div className="absolute bottom-6 left-6 flex flex-col">
+                        <span className="text-white font-bold text-xl drop-shadow-md">Higor Selvino</span>
+                        <span className="text-gray-300 text-sm drop-shadow-md">- Especialista em mercado gringo</span>
+                    </div>
                 </div>
             </div>
 
