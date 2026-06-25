@@ -1,5 +1,6 @@
 'use client';
 import { ArrowRight } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function SocialProof() {
     const proofs = [
@@ -15,6 +16,43 @@ export default function SocialProof() {
       { src: '/depo11.jpg', width: 302, height: 374 },
     ];
 
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const scrollPos = useRef(0);
+    const [isInteracting, setIsInteracting] = useState(false);
+
+    useEffect(() => {
+        let animationFrameId: number;
+        let lastTime = performance.now();
+
+        const scroll = (time: number) => {
+            const deltaTime = time - lastTime;
+            lastTime = time;
+
+            if (scrollRef.current && !isInteracting) {
+                // Sincroniza a posição atual caso o usuário tenha arrastado manualmente
+                if (Math.abs(scrollPos.current - scrollRef.current.scrollLeft) > 2) {
+                    scrollPos.current = scrollRef.current.scrollLeft;
+                }
+
+                // Velocidade de 40px por segundo
+                scrollPos.current += (40 * deltaTime) / 1000;
+                
+                // Se chegou na metade do container (onde começam os itens duplicados), reseta para o começo para efeito infinito
+                if (scrollPos.current >= scrollRef.current.scrollWidth / 2) {
+                    scrollPos.current = 0;
+                }
+
+                scrollRef.current.scrollLeft = scrollPos.current;
+            }
+            
+            animationFrameId = requestAnimationFrame(scroll);
+        };
+
+        animationFrameId = requestAnimationFrame(scroll);
+
+        return () => cancelAnimationFrame(animationFrameId);
+    }, [isInteracting]);
+
   return (
     <section className="py-16 md:py-24 overflow-hidden bg-[#050505]">
         <div className="container mx-auto px-4 text-center mb-10 max-w-4xl">
@@ -24,17 +62,25 @@ export default function SocialProof() {
             <p className="text-gray-400 mt-2 text-lg md:text-xl font-medium mb-6">Resultados reais de artistas que aplicaram o método.</p>
         </div>
 
-        {/* CSS Marquee Wrapper Desktop / Scroll Mobile */}
+        {/* Carousel Wrapper */}
         <div className="relative w-full max-w-[100vw] overflow-hidden flex flex-col gap-6 py-4">
             {/* Fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
 
-            {/* Marquee Row */}
-            <div className="flex gap-4 w-full overflow-x-auto snap-x snap-mandatory px-4 md:px-0 md:w-max md:overflow-visible md:animate-[marquee_50s_linear_infinite] md:hover:[animation-play-state:paused] hide-scrollbar">
+            {/* Scrollable Row */}
+            <div 
+                ref={scrollRef}
+                className="flex gap-4 w-full overflow-x-auto px-4 md:px-0 hide-scrollbar scroll-smooth-disabled"
+                onMouseEnter={() => setIsInteracting(true)}
+                onMouseLeave={() => setIsInteracting(false)}
+                onTouchStart={() => setIsInteracting(true)}
+                onTouchEnd={() => setIsInteracting(false)}
+                style={{ WebkitOverflowScrolling: 'touch' }}
+            >
                 {/* Dobramos a array para criar o efeito infinito contínuo */}
                 {[...proofs, ...proofs].map((proof, i) => (
-                    <div key={i} className="snap-center relative rounded-xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-lg transition duration-300 hover:border-purple-500/30 shrink-0" style={{ height: '350px' }}>
+                    <div key={i} className="relative rounded-xl overflow-hidden border border-gray-800 bg-[#0a0a0a] shadow-lg transition duration-300 hover:border-purple-500/30 shrink-0" style={{ height: '350px' }}>
                         <img 
                             src={encodeURI(proof.src)} 
                             alt={`Comprovante ${i}`}
@@ -50,16 +96,15 @@ export default function SocialProof() {
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-          }
           .hide-scrollbar::-webkit-scrollbar {
             display: none;
           }
           .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
+          }
+          .scroll-smooth-disabled {
+            scroll-behavior: auto !important;
           }
         `}} />
 
